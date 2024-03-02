@@ -772,6 +772,9 @@ object KotlinUtils {
                 newPerms[newPerm.name] = newPerm
                 shouldKillForAnyPermission = shouldKillForAnyPermission || shouldKill
             }
+            if (Manifest.permission.ALLOW_PROTECTED_MEDIA.contentEquals(permName)) {
+                shouldKillForAnyPermission = true
+            }
         }
         if (!newPerms.isEmpty()) {
             val user = UserHandle.getUserHandleForUid(group.packageInfo.uid)
@@ -1025,6 +1028,9 @@ object KotlinUtils {
                         group)
                 newPerms[newPerm.name] = newPerm
                 shouldKillForAnyPermission = shouldKillForAnyPermission || shouldKill
+            }
+            if (Manifest.permission.ALLOW_PROTECTED_MEDIA.contentEquals(permName)) {
+                shouldKillForAnyPermission = true
             }
         }
 
