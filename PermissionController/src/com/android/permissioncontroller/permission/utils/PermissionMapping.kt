@@ -188,11 +188,14 @@ object PermissionMapping {
 
         PLATFORM_PERMISSIONS[Manifest.permission.INTERNET] = Manifest.permission_group.NETWORK
         PLATFORM_PERMISSIONS[Manifest.permission.OTHER_SENSORS] = Manifest.permission_group.OTHER_SENSORS
+        PLATFORM_PERMISSIONS[Manifest.permission.ALLOW_PROTECTED_MEDIA] = Manifest.permission_group.ALLOW_PROTECTED_MEDIA
 
         SPECIAL_RUNTIME_PERMISSIONS[Manifest.permission.INTERNET] =
             Manifest.permission_group.NETWORK
         SPECIAL_RUNTIME_PERMISSIONS[Manifest.permission.OTHER_SENSORS] =
             Manifest.permission_group.OTHER_SENSORS
+        SPECIAL_RUNTIME_PERMISSIONS[Manifest.permission.ALLOW_PROTECTED_MEDIA] =
+                Manifest.permission_group.ALLOW_PROTECTED_MEDIA
 
         for ((permission, permissionGroup) in PLATFORM_PERMISSIONS) {
             PLATFORM_PERMISSION_GROUPS.getOrPut(permissionGroup) { mutableListOf() }.add(permission)
